@@ -1,0 +1,4 @@
+post_install() {
+    echo "==> Fish configuration files have been copied to /etc/skel."
+    echo "==> You may copy these files to ~/.config/ and make any changes you wish."
+}

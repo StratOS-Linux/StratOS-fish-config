@@ -10,11 +10,14 @@ depends=(
     'starship'
 )
 source=('.config')
+optdepends=('stratos-starship-config: Starship configuration'
+            'ttf-jetbrains-mono-nerd: Default nerd font')
+install=stratos-fish-config.install
 md5sums=('SKIP')
-
+prepare() {
+    cp -r "$startdir/.config/" "$srcdir/"
+}
 package() {
     install -d "$pkgdir/etc/skel/.config"
-    cp -r "$srcdir/.config/fish/" "$pkgdir/etc/skel/.config/"
-    echo "Configuration files have been copied to /etc/skel."
-    echo "You may copy these files to ~/.config/ and make any changes you wish."
+    cp -r "$srcdir/fish/" "$pkgdir/etc/skel/.config/"
 }
