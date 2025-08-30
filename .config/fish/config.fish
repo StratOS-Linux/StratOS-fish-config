@@ -4,9 +4,9 @@ if status is-interactive
     source (/usr/bin/starship init fish --print-full-init | psub)
     # set -gx fish_key_bindings fish_vi_key_bindings
     if [ "$IS_VTERM" != "1" ];
-	fish_vi_key_bindings
+	    fish_vi_key_bindings
     else
-	fish_default_key_bindings
+	    fish_default_key_bindings
     end
     source ~/.config/fish/aliases
     set -x MANROFFOPT "-c"

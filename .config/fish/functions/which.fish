@@ -10,19 +10,19 @@ function which
         set_color normal
     end
 
-    if rg "function $cmd" $HOME/.dotfiles/shells/fish/config.fish >/dev/null
-	functions $cmd
+    if rg "function $cmd" $HOME/.config/fish/config.fish >/dev/null
+	    functions $cmd
     end
 
     # Check if the function is defined in the functions directory
-    set func_file $HOME/.dotfiles/shells/fish/functions/$cmd.fish
+    set func_file $HOME/.config/fish/functions/$cmd.fish
     if test -f $func_file
-	functions $cmd
+	    functions $cmd
     end
     set -l exec (command -v $cmd)
     set str2 (echo $exec | tr -d ' ')
     if test -n $str2
-	echo -n "$cmd: found in "
+	    echo -n "$cmd: found in "
         set_color cyan
         echo $exec
         set_color normal
